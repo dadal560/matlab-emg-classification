@@ -29,8 +29,8 @@ L'application couvre toute la chaîne : visualisation des signaux bruts, détect
 
 1.  **Clonez le dépôt**
     ```bash
-    git clone [https://github.com/votre-username/semg-gesture-analysis.git](https://github.com/votre-username/semg-gesture-analysis.git)
-    cd semg-gesture-analysis
+    git clone https://github.com/dadal560/matlab-emg-classification.git
+    cd matlab-emg-classification
     ```
 
 2.  **Structure des dossiers**
