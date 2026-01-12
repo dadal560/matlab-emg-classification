@@ -1,44 +1,59 @@
-# Surface EMG Signal Analysis
+# Surface EMG Gesture Analysis
 
-**Auteur :** Gwendal Henry (La Rochelle Université)
-**Sujet :** Traitement du signal biomédical (sEMG)
-**Langage :** MATLAB
+Une chaîne de traitement MATLAB complète pour l'analyse, la segmentation et la classification de signaux électromyographiques de surface (sEMG).
 
-## Description
-Ce projet documente l'analyse de signaux électromyographiques de surface pour caractériser deux gestes de la main distincts :
-1.  **Double Tap :** Mouvements rapides et intermittents.
-2.  **Fist (Poing fermé) :** Contractions musculaires maintenues avec une forte intensité.
+![MATLAB](https://img.shields.io/badge/Language-MATLAB-orange)
+![Status](https://img.shields.io/badge/Status-Academic%20Project-blue)
+![University](https://img.shields.io/badge/Institution-La%20Rochelle%20Université-red)
 
-L'objectif est de visualiser les signaux bruts, de détecter automatiquement les phases d'activation, de segmenter les données et d'extraire des caractéristiques discriminantes pour la classification.
+## 📋 Description
 
-## Chaîne de traitement
+Ce projet implémente un algorithme de traitement du signal capable de différencier deux gestes de la main à partir de données brutes sEMG de manière non invasive :
 
-### 1. Prétraitement et Détection d'activité
-Pour distinguer les phases de repos des phases d'activité, la méthode suivante est appliquée :
-* **Enveloppe :** Calcul de la valeur absolue du signal brut.
-* **Lissage :** Application d'un filtre moyenneur avec une fenêtre de **80 points** (N=80) pour ne garder que la tendance générale.
-* **Seuillage :** Un seuil d'activation est fixé à **0.5**. Si le signal lissé est supérieur à 0.5, le muscle est considéré comme actif.
+1.  **Double Tap :** Mouvements rapides, périodiques et intermittents.
+2.  **Fist (Poing fermé) :** Contractions musculaires intenses, maintenues et générant une activité plus longue.
 
-### 2. Segmentation Temporelle
-Le signal binaire d'activation est utilisé pour isoler chaque contraction. L'algorithme repère les transitions (passages de 0 à 1 et de 1 à 0) pour découper le signal en segments individuels.
-* Cela permet d'isoler environ 10 segments courts pour le geste "Double Tap".
-* Les segments du "Fist" apparaissent plus longs.
+L'application couvre toute la chaîne : visualisation des signaux bruts, détection des phases d'activation, segmentation temporelle et extraction de caractéristiques pour la classification.
 
-### 3. Extraction de caractéristiques (Feature Extraction)
-Pour classifier les gestes, deux métriques statistiques sont calculées sur chaque segment isolé :
-* **Moyenne (mean) :** Indique le niveau moyen d'activation musculaire.
-* **Variance (var) :** Mesure la variabilité du signal.
+---
 
-## Résultats
-L'analyse de l'espace des caractéristiques (Moyenne vs Variance) révèle une séparation nette entre les deux gestes :
-* Le geste **Fist** présente une variance significativement plus élevée, reflétant une contraction complexe et variable.
-* Le **Double Tap** se regroupe dans une zone de variance plus faible.
-* Une régression linéaire permet de visualiser la frontière de décision, validant la possibilité d'une classification automatique.
+## ⚙️ Installation et Configuration
 
-## Structure du projet
+### Prérequis
 
-```text
-├── data/           # Données brutes des 8 canaux EMG
-├── src/            # Scripts d'analyse MATLAB
-├── results/        # Figures (Signaux bruts, Segmentation, Nuages de points)
-└── README.md       # Rapport technique
+* **MATLAB** (R2018b ou plus récent recommandé).
+* **Signal Processing Toolbox** (nécessaire pour les fonctions de convolution).
+* Jeu de données EMG (fichiers bruts).
+
+### Installation
+
+1.  **Clonez le dépôt**
+    ```bash
+    git clone [https://github.com/votre-username/semg-gesture-analysis.git](https://github.com/votre-username/semg-gesture-analysis.git)
+    cd semg-gesture-analysis
+    ```
+
+2.  **Structure des dossiers**
+    Le projet respecte l'architecture suivante :
+    ```text
+    semg-gesture-analysis/
+    │── data/                # Fichiers de données des signaux bruts
+    │── src/                 # Codes sources MATLAB
+    │   ├── main.m           # Point d'entrée principal
+    │   ├── detection.m      # Algorithme de lissage et seuillage
+    │   └── features.m       # Calcul des caractéristiques (Moy/Var)
+    │── results/             # Graphiques générés
+    │── README.md            # Documentation du projet
+    └── .gitignore
+    ```
+
+### Configuration des Paramètres
+
+Les paramètres clés de l'algorithme sont définis pour optimiser la détection :
+
+```matlab
+% Paramètres de lissage
+N = 80;                 % Taille de la fenêtre du filtre moyenneur
+
+% Paramètres de détection
+Seuil = 0.5;            % Seuil d'activation (Trigger)
