@@ -116,6 +116,11 @@ L'analyse montre une séparation nette :
 
 ## Auteur et Crédits
 
-**Auteur :** Gwendal Henry
-**Contexte :** Compte-rendu de TP "Analyse des signaux électromyographiques de surface".
-**Institution :** La Rochelle Université.
+- Auteur : Gwendal Henry
+- Email : gwen.henry56@gmail.com
+- Issues : [GitHub Issues](https://github.com/dadal560/flask-mailer/issues)
+
+---
+
+⭐ **N'oubliez pas de star le projet si il vous a été utile !**
+
