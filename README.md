@@ -50,8 +50,7 @@ L'application couvre toute la chaîne : visualisation des signaux bruts, détect
 
 ### Lancement de l'analyse
 
-1.  Ouvrez MATLAB et définissez le dossier `src/` comme dossier de travail.
-2.  Exécutez le script principal :
+1.  Exécutez le script principal :
 
     ```matlab
     >> main
