@@ -29,19 +29,16 @@ L'application couvre toute la chaîne : visualisation des signaux bruts, détect
 
 1.  **Clonez le dépôt**
     ```bash
-    git clone [https://github.com/votre-username/semg-gesture-analysis.git](https://github.com/votre-username/semg-gesture-analysis.git)
-    cd semg-gesture-analysis
+    git clone https://github.com/dadal560/matlab-emg-classification.git
+    cd matlab-emg-classification
     ```
 
 2.  **Structure des dossiers**
     Le projet respecte l'architecture suivante :
     ```text
-    semg-gesture-analysis/
+    matlab-emg-classification/
     │── data/                # Fichiers de données des signaux bruts
-    │── src/                 # Codes sources MATLAB
-    │   ├── main.m           # Point d'entrée principal
-    │   ├── detection.m      # Algorithme de lissage et seuillage
-    │   └── features.m       # Calcul des caractéristiques (Moy/Var)
+    ├── main.m           # Codes sources MATLAB
     │── results/             # Graphiques générés
     │── README.md            # Documentation du projet
     └── .gitignore
@@ -53,8 +50,7 @@ L'application couvre toute la chaîne : visualisation des signaux bruts, détect
 
 ### Lancement de l'analyse
 
-1.  Ouvrez MATLAB et définissez le dossier `src/` comme dossier de travail.
-2.  Exécutez le script principal :
+1.  Exécutez le script principal :
 
     ```matlab
     >> main
