@@ -36,12 +36,9 @@ L'application couvre toute la chaîne : visualisation des signaux bruts, détect
 2.  **Structure des dossiers**
     Le projet respecte l'architecture suivante :
     ```text
-    semg-gesture-analysis/
+    matlab-emg-classification/
     │── data/                # Fichiers de données des signaux bruts
-    │── src/                 # Codes sources MATLAB
-    │   ├── main.m           # Point d'entrée principal
-    │   ├── detection.m      # Algorithme de lissage et seuillage
-    │   └── features.m       # Calcul des caractéristiques (Moy/Var)
+    ├── main.m           # Codes sources MATLAB
     │── results/             # Graphiques générés
     │── README.md            # Documentation du projet
     └── .gitignore
