@@ -98,18 +98,6 @@ L'analyse montre une séparation nette :
 
 ---
 
-## Dépannage
-
-**Problème : Aucune activation n'est détectée.**
-* *Cause possible :* Le signal est trop faible par rapport au seuil fixé.
-* *Solution :* Essayez de réduire la variable `Seuil` (ex: 0.3) dans le script principal.
-
-**Problème : La segmentation coupe une seule contraction en plusieurs morceaux.**
-* *Cause possible :* Le lissage est insuffisant.
-* *Solution :* Augmentez la taille de la fenêtre `N` (ex: 100) pour lisser davantage l'enveloppe.
-
----
-
 ## Auteur et Crédits
 
 - Auteur : Gwendal Henry
